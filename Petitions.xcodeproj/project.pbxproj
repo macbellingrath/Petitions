@@ -13,6 +13,7 @@
 		E683A24A1B67AC960090973A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E683A2481B67AC960090973A /* Main.storyboard */; };
 		E683A24C1B67AC960090973A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E683A24B1B67AC960090973A /* Assets.xcassets */; };
 		E683A24F1B67AC960090973A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E683A24D1B67AC960090973A /* LaunchScreen.storyboard */; };
+		E683A2571B67AF6A0090973A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683A2561B67AF6A0090973A /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,10 @@
 		E683A24B1B67AC960090973A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E683A24E1B67AC960090973A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E683A2501B67AC960090973A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E683A2561B67AF6A0090973A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		E683A2581B67FAAF0090973A /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		E683A2591B67FAAF0090973A /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		E683A25A1B67FAAF0090973A /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +47,9 @@
 			children = (
 				E683A2411B67AC960090973A /* Petitions */,
 				E683A2401B67AC960090973A /* Products */,
+				E683A2581B67FAAF0090973A /* 3.png */,
+				E683A2591B67FAAF0090973A /* 1.png */,
+				E683A25A1B67FAAF0090973A /* 2.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +67,7 @@
 				E683A2421B67AC960090973A /* AppDelegate.swift */,
 				E683A2441B67AC960090973A /* MasterViewController.swift */,
 				E683A2461B67AC960090973A /* DetailViewController.swift */,
+				E683A2561B67AF6A0090973A /* SwiftyJSON.swift */,
 				E683A2481B67AC960090973A /* Main.storyboard */,
 				E683A24B1B67AC960090973A /* Assets.xcassets */,
 				E683A24D1B67AC960090973A /* LaunchScreen.storyboard */,
@@ -140,6 +149,7 @@
 				E683A2471B67AC960090973A /* DetailViewController.swift in Sources */,
 				E683A2451B67AC960090973A /* MasterViewController.swift in Sources */,
 				E683A2431B67AC960090973A /* AppDelegate.swift in Sources */,
+				E683A2571B67AF6A0090973A /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +297,7 @@
 				E683A2551B67AC960090973A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
