@@ -18,13 +18,15 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         
         
-        
-        let urlString:String
-        if navigationController?.tabBarItem.tag == 0{
-            title = "Petitions: Recent "
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)){ [unowned self] in
+            
+       
+        var urlString:String = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
+        if self.navigationController?.tabBarItem.tag == 0{
+            self.title = "Petitions: Recent "
             urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
         } else {
-            title = "Petitions: Popular"
+            self.title = "Petitions: Popular"
             urlString = "https://api.whitehouse.gov/v1/petitions.json?signatureCountFloor=10000&limit=100"
         }
         if let url = NSURL(string: urlString){
@@ -32,15 +34,16 @@ class MasterViewController: UITableViewController {
                 let json = JSON(data: data)
                 if json["metadata"]["responseInfo"]["status"].intValue == 200 {
                     print("OK to parse")
-                    parseJSON(json)
+                    self.parseJSON(json)
                     }   else {
-                    showError()
+                    self.showError()
                   }
                 } else {
-                showError()
+               self.showError()
             }} else {
-            showError()
+            self.showError()
             }
+        }
     }
     // MARK: - JSON Methods
     
@@ -53,7 +56,10 @@ class MasterViewController: UITableViewController {
             let obj = ["title": title, "body": body, "sigs": sigs, "signaturesNeeded":sigsNeeded]
             objects.append(obj)
         }
-        tableView.reloadData()
+        dispatch_async(dispatch_get_main_queue()){ [unowned self] in
+            self.tableView.reloadData()
+ 
+        }
     }
 
 
@@ -111,9 +117,12 @@ class MasterViewController: UITableViewController {
         self.navigationController!.dismissViewControllerAnimated(true, completion: nil)
     }
     func showError() {
+        dispatch_async(dispatch_get_main_queue()){[unowned self] in
+            
         let ac = UIAlertController(title: "Loading Error", message: "I'm having trouble connecting to the feed", preferredStyle: .Alert)
         ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        presentViewController(ac, animated: true, completion: nil)
-        
+        self.presentViewController(ac, animated: true, completion: nil)
+       
+        }
     }
 }
